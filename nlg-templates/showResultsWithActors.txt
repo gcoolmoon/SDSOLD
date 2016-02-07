@@ -1,0 +1,8 @@
+The [%results->distinct%] actors are:<br/>
+<foreach [%results->bindings%] limit=5>
+name: [%actorn->value%]<br/>
+</foreach>
+AND
+<foreach [%results->bindings%] limit=2>
+name: [%actorn->type%]<br/>
+</foreach>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<conditions>
+
+<!-- operators:
+==
+!=
+>
+<
+>=
+<=
+<<
+<=<
+<<=
+<=<=
+!<<
+~*
+!~*
+
+attributes: field, operator, value, minValue, maxValue
+we have defined confidence for different scenarios here 
+&#60; means > 
+different actions for different confidences 
+-->
+<confidence>
+    <condition>
+        <field>asrconf</field>
+        <operator> &#60; </operator>
+        <value>80</value>            
+    </condition>    
+    <action>prompt(isquestion.txt)</action>
+</confidence>
+
+<confidence>
+     <condition>
+        <field>uttconf</field>
+        <operator> &#60;</operator>
+        <value>90</value>            
+    </condition>
+    <action>prompt(isutterance.txt)</action>
+</confidence>
+
+<confidence>
+     <condition>
+        <field>conconf</field>
+        <operator> &#60; </operator>
+        <value>85</value>            
+    </condition>
+    <action>prompt(isconcept.txt)</action>
+</confidence>
+
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>movie</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovie.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>movie.count</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmoviecount.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>imdb.rating</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovierating.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>imdb.rating</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovierating.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>awards</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovieAwards.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>trailer</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovieDirector.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>Director</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovieDirector.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>actor</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>English</value>
+	</condition>
+	<action>prompt(isanEnglishmovieActor.txt)</action>
+</if>
+<if>
+	<condition>
+		<field>object</field>
+		<operator>==</operator>
+		<value>movie</value>
+	</condition>
+	<condition>
+		<field>language</field>
+		<operator>==</operator>
+		<value>Chinese</value>
+	</condition>
+	<action>prompt(isamovie.txt)</action>
+</if>
+<default>
+returnMessage(This is a printed message)
+</default>
+</conditions>
